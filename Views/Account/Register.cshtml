@@ -1,0 +1,105 @@
+﻿@model SchoolManagement.Models.ModelView.Register
+
+
+<h2>Sign Up</h2>
+<form method="post" asp-action="Register" asp-controller="Account">
+    <h4>Create a new account.</h4>
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group row">
+        <label class="col-md-2" asp-for="Name"></label>
+        <div class=" col-md-10">
+            <input asp-for="Name" class="form-control col-md-5" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2" asp-for="Email"></label>
+        <div class=" col-md-10">
+            <input asp-for="Email" class="form-control col-md-5" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2" asp-for="Password"></label>
+        <div class=" col-md-10">
+            <input asp-for="Password" class="form-control col-md-5" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2" asp-for="Confirmpassword"></label>
+        <div class=" col-md-10">
+            <input asp-for="Confirmpassword" class="form-control col-md-5" />
+            <span asp-validation-for="Confirmpassword" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2" asp-for="Course"></label>
+        <div class=" col-md-10">
+            <input asp-for="Course" class="form-control col-md-5" />
+            <span asp-validation-for="Course" class="text-danger"></span>
+        </div>
+    </div>
+    <div class=" form-group row ">
+        <label asp-for="Role" class="col-md-2"></label>
+        <select asp-for="Role" asp-items="@SchoolManagement.Utility.Helper.GetRolesForDropDown()" class="form-control col-md-5"></select>
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Register" class="btn btn-success" />
+        </div>
+    </div>
+    <p class="col-md-10 offset-md-2">
+        <a asp-action="Login">Sign In</a>
+    </p>
+</form>
+
+@*<h2>Sing Up</h2>
+    <form  method="post" asp-action="Register" asp-controller="Account">
+
+
+                 <label asp-for="Name" class="mx-3"></label>
+                <input asp-for="Name" class="form-control col-md-3" />
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class=" form-group row ">
+                <label asp-for="Email" class="mx-3"></label>
+                <input asp-for="Email" class="form-control col-md-3" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class=" form-group row  ">
+                <label asp-for="Password" class="mx-3"></label>
+                <input asp-for="Password" class="form-control col-md-3" />
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class=" form-group row ">
+                <label asp-for="Confirmpassword" class="mx-3"></label>
+                <input asp-for="Confirmpassword" class="form-control col-md-3" />
+                <span class="text-danger" asp-validation-for="Confirmpassword"></span>
+            </div>
+            <div class=" form-group row ">
+                <label asp-for="Course" class="mx-3"></label>
+                <input asp-for="Course" class="form-control col-md-3" />
+                <span class="text-danger" asp-validation-for="Course"></span>
+            </div>
+            <div class=" form-group row ">
+                <label asp-for="Role" class="mx-3"></label>
+                <select asp-for="Role" asp-items="@SchoolManagement.Utility.Helper.GetRolesForDropDown()" class="form-control col-md-3" ></select>
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <input type="submit" value="Register" class="btn btn-success" />
+            </div>
+            <div>
+                <a asp-action="Login">Sign in</a>
+            </div>
+
+    </form>*@
+
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

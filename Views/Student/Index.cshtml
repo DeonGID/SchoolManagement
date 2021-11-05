@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SchoolManagement.Models.Student>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+        </div>
+        @*<div class="col-6 text-right">
+            <a asp-controller="Item" asp-action="Create" class="btn btn-primary"> Create new item</a>
+        </div>*@
+        <br />
+        @if (Model.Count() > 0)
+        {
+            <table class="table-bordered table-striped table-hover" style="width:100% ">
+                <thead>
+                    <tr>
+                        <th scope="">MONDAY</th>
+                        <th scope="">TUESDAY</th>
+                        <th scope="">WEDNESDAY</th>
+                        <th scope="">THURSDAY</th>
+                        <th scope="">FRIDAY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                    <tr>
+                        <td width="20%">@student.Monday</td>
+                        <td width="20%">@student.Tuesday</td>
+                        <td width="20%">@student.Wednesday</td>
+                        <td width="20%">@student.Thursday</td>
+                        <td width="20%">@student.Friday</td>
+
+
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            <p>No item created yet</p>
+        }
