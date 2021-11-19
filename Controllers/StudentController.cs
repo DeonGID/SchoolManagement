@@ -17,10 +17,6 @@ namespace SchoolManagement.Controllers
                 this.db = db;
             }
 
-        public IActionResult Tabs()
-        {
-            return View();
-        }
             public IActionResult Index()
             {
             IEnumerable<Student> objList = db.students;
